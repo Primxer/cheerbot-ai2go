@@ -7,6 +7,8 @@ if [ "$#" -ne 1 ]; then
 	exit 1
 fi
 
+cd $(dirname "$0")
+
 # Create virtualenv and set up environment
 python3 -m venv venv
 source venv/bin/activate
@@ -16,6 +18,9 @@ pushd "$1"
 python3 -m pip uninstall xnornet || true
 python3 -m pip install xnornet*.whl
 popd
+
+# Install other modules
+python3 -m pip install -r requirements.txt
 
 # Done!
 cat <<EOF
