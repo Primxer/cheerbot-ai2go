@@ -93,7 +93,16 @@ def CheerbotRover(mock=True):
 if __name__ == '__main__':
     rover = RealRover()
     inputString = ""
-    while(inputString is not "q"):
-        rover.forward()
+    while(True):
         input(inputString)
+        if(inputString == "w")
+            rover.forward()
+        elif(inputString == "s")
+            rover.backward()
+        elif(inputString == "a")
+            rover.left()
+        elif(inputString == "d")
+            rover.right()
+        else:
+            break
     GPIO.cleanup( [12, 18, 19, 13] )
