@@ -17,6 +17,7 @@ rightSpeed = 18
 leftDir = 19
 leftSpeed = 13
 
+GPIO.cleanup()
 GPIO.setup(rightDir, GPIO.OUT)
 GPIO.setup(rightSpeed, GPIO.OUT)
 GPIO.setup(leftDir, GPIO.OUT)
