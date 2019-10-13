@@ -82,6 +82,8 @@ class RealRover:
                 sleep(0.30)
                 self.stop()
                 count += 1
+                self.left()
+                sleep(0.25)
         pass
 
     def wander(self):
