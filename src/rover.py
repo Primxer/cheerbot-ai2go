@@ -17,7 +17,6 @@ rightSpeed = 18
 leftDir = 19
 leftSpeed = 13
 
-GPIO.cleanup()
 GPIO.setup(rightDir, GPIO.OUT)
 GPIO.setup(rightSpeed, GPIO.OUT)
 GPIO.setup(leftDir, GPIO.OUT)
@@ -94,4 +93,4 @@ def CheerbotRover(mock=True):
 if __name__ == '__main__':
     rover = RealRover()
     rover.forward()
-    GPIO.cleanup()
+    GPIO.cleanup(12, 18, 19, 13)
