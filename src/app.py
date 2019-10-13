@@ -11,10 +11,11 @@ if __name__ == '__main__':
     sound = CheerbotSound(mock=True)
     rover = CheerbotRover(mock=True)
 
-    with EmotionClassifier() as face:
+    with EmotionClassifier() as emoteClassifier:
         while True:
-            succ, emotion = face.read()
+            succ, emotion = emoteClassifier.read()
             if succ:
+                print("Found face")
                 # Determine which face to display
                 face.show(emotion)
                 sound.play(emotion)
@@ -24,4 +25,5 @@ if __name__ == '__main__':
                 # Cooldown so it doesn't repeat
                 sleep(1)
             else:
+                print("Can't see face: " + emotion)
                 rover.wander()

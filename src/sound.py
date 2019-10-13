@@ -3,7 +3,7 @@ class RealSound:
         pass
 
 class MockSound:
-    def play(self, mood):
+    def play(self, emotion):
         if emotion in ['anger', 'disgust', 'fear']:
             print("Playing negative noise..")
         elif emotion == 'happy':
