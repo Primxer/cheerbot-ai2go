@@ -10,7 +10,7 @@ import atexit
 #LeftMotorDir    pin  2  //white wire pi pin 19
 
 #######Pin Setup
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 LOW = 0
 HIGH = 1
 rightDir = 12
@@ -35,8 +35,8 @@ class RealRover:
     def backward(self):
         GPIO.output(rightDir, GPIO.LOW)
         GPIO.output(leftDir, GPIO.LOW)
-        GPIO.output(rightSpeed, GPIO.LOW)
-        GPIO.output(leftSpeed, GPIO.LOW)
+        GPIO.output(rightSpeed, GPIO.HIGH)
+        GPIO.output(leftSpeed, GPIO.HIGH)
 
     def left(self):
         GPIO.output(rightDir, GPIO.LOW)
