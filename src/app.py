@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from emotion import EmotionDetector
+from emotion import EmotionClassifier
 from time import sleep
 
 from face import CheerbotFace
