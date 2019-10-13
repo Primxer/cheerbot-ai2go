@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from time import sleep
 import RPi.GPIO as GPIO
+import atexit
 
 #######Pin Asssignments for the Motor Controller
 #RightMotorSpeed pin  5  //blue wire pi pin 18
@@ -89,6 +90,11 @@ def CheerbotRover(mock=True):
     else:
         return RealRover()
 
+# Clean up GPIO ports at program exit
+def __cleanup__():
+    GPIO.cleanup([rightDir, rightSpeed, leftDir, leftSpeed])
+atexit.register(__cleanup__)
+
 
 if __name__ == '__main__':
     rover = RealRover()
@@ -105,4 +111,3 @@ if __name__ == '__main__':
             rover.right()
         else:
             break
-    GPIO.cleanup( [12, 18, 19, 13] )
