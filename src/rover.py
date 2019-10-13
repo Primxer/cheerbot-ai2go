@@ -30,7 +30,7 @@ class RealRover:
         GPIO.output(leftDir, GPIO.HIGH)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
-        sleep(5)
+        sleep(2)
         self.stop()
 
     def backward(self):
@@ -38,7 +38,7 @@ class RealRover:
         GPIO.output(leftDir, GPIO.LOW)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
-        sleep(5)
+        sleep(2)
         self.stop()
 
     def right(self):
@@ -46,7 +46,7 @@ class RealRover:
         GPIO.output(leftDir, GPIO.HIGH)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
-        sleep(5)
+        sleep(2)
         self.stop()
 
     def left(self):
@@ -54,7 +54,7 @@ class RealRover:
         GPIO.output(leftDir, GPIO.LOW)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
-        sleep(5)
+        sleep(2)
         self.stop()
 
     def stop(self):
@@ -92,5 +92,8 @@ def CheerbotRover(mock=True):
 
 if __name__ == '__main__':
     rover = RealRover()
-    rover.forward()
+    inputString = ""
+    while(inputString is not "q"):
+        rover.forward()
+        input(inputString)
     GPIO.cleanup( [12, 18, 19, 13] )
