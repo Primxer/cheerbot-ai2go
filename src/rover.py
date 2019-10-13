@@ -25,6 +25,36 @@ GPIO.setup(leftSpeed,GPIO.OUT)
 
 # Skeleton for where the real rover code would be
 class RealRover:
+    def forward(self):
+        GPIO.output(rightDir, GPIO.HIGH)
+        GPIO.output(leftDir, GPIO.HIGH)
+        GPIO.output(rightSpeed, GPIO.HIGH)
+        GPIO.output(leftSpeed, GPIO.HIGH)
+
+    def backward(self):
+        GPIO.output(rightDir, GPIO.LOW)
+        GPIO.output(leftDir, GPIO.LOW)
+        GPIO.output(rightSpeed, GPIO.HIGH)
+        GPIO.output(leftSpeed, GPIO.HIGH)
+
+    def right(self):
+        GPIO.output(rightDir, GPIO.LOW)
+        GPIO.output(leftDir, GPIO.HIGH)
+        GPIO.output(rightSpeed, GPIO.HIGH)
+        GPIO.output(leftSpeed, GPIO.HIGH)
+
+    def left(self):
+        GPIO.output(rightDir, GPIO.HIGH)
+        GPIO.output(leftDir, GPIO.LOW)
+        GPIO.output(rightSpeed, GPIO.HIGH)
+        GPIO.output(leftSpeed, GPIO.HIGH)
+
+    def stop(self):
+        GPIO.output(rightDir, GPIO.LOW)
+        GPIO.output(leftDir, GPIO.LOW)
+        GPIO.output(rightSpeed, GPIO.LOW)
+        GPIO.output(leftSpeed, GPIO.LOW)
+
     def react(self, emotion):
         pass
 
@@ -53,41 +83,5 @@ def CheerbotRover(mock=True):
 
 
 if __name__ == '__main__':
-    rover = CheerbotRover(mock=True)
-    rover.react('happy')
-    rover.react('fear')
-    forward()
-
-def forward():
-    GPIO.output(rightDir,GPIO.HIGH)
-    GPIO.output(leftDir,GPIO.HIGH)
-    GPIO.output(rightSpeed,GPIO.HIGH)
-    GPIO.output(leftSpeed,GPIO.HIGH)
-
-def backward():
-    GPIO.output(rightDir,GPIO.LOW)
-    GPIO.output(leftDir,GPIO.LOW)
-    GPIO.output(rightSpeed,GPIO.HIGH)
-    GPIO.output(leftSpeed,GPIO.HIGH)
-
-def right():
-    GPIO.output(rightDir,GPIO.LOW)
-    GPIO.output(leftDir,GPIO.HIGH)
-    GPIO.output(rightSpeed,GPIO.HIGH)
-    GPIO.output(leftSpeed,GPIO.HIGH)
-
-def left():
-    GPIO.output(rightDir,GPIO.HIGH)
-    GPIO.output(leftDir,GPIO.LOW)
-    GPIO.output(rightSpeed,GPIO.HIGH)
-    GPIO.output(leftSpeed,GPIO.HIGH)
-
-def stop():
-    GPIO.output(rightDir,GPIO.LOW)
-    GPIO.output(leftDir,GPIO.LOW)
-    GPIO.output(rightSpeed,GPIO.LOW)
-    GPIO.output(leftSpeed,GPIO.LOW)
-
-
-#####We must make sure the motors are stopped at the end
-stop()
+    rover = RealRover
+    rover.forward()
