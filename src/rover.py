@@ -92,16 +92,16 @@ def CheerbotRover(mock=True):
 
 if __name__ == '__main__':
     rover = RealRover()
-    inputString = ""
+    inputString = " "
     while(True):
-        input(inputString)
-        if(inputString == "w")
+        inputString = input()
+        if inputString == "w":
             rover.forward()
-        elif(inputString == "s")
+        elif inputString == "s":
             rover.backward()
-        elif(inputString == "a")
+        elif inputString == "a":
             rover.left()
-        elif(inputString == "d")
+        elif inputString == "d":
             rover.right()
         else:
             break
