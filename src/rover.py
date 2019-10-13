@@ -111,4 +111,5 @@ atexit.register(__cleanup__)
 if __name__ == '__main__':
     rover = RealRover()
     rover.react("happy")
+    sleep(2)
     rover.react("sad")
