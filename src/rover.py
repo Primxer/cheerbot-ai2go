@@ -77,7 +77,7 @@ class RealRover:
                 sleep(0.25)
                 self.stop()
                 self.right()
-                sleep(0.5)
+                sleep(0.35)
                 self.stop()
                 count += 1
         pass
