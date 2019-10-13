@@ -17,10 +17,10 @@ rightSpeed = LOW
 leftDir = LOW
 leftSpeed = LOW
 
-GPIO.setup(rightDir,GPIO.OUT)
-GPIO.setup(rightSpeed,GPIO.OUT)
-GPIO.setup(leftDir,GPIO.OUT)
-GPIO.setup(leftSpeed,GPIO.OUT)
+GPIO.setup(rightDir, GPIO.OUT)
+GPIO.setup(rightSpeed, GPIO.OUT)
+GPIO.setup(leftDir, GPIO.OUT)
+GPIO.setup(leftSpeed, GPIO.OUT)
 
 
 # Skeleton for where the real rover code would be
