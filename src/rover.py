@@ -92,10 +92,7 @@ atexit.register(__cleanup__)
 if __name__ == '__main__':
     rover = RealRover()
     while(True):
-        try:
-            if keyboard.on_press_key('w'):
-                rover.forward()
-            elif keyboard.on_release_key('w'):
-                rover.stop()
-        except:
-            break
+        if keyboard.on_press_key('w'):
+            rover.forward()
+        elif keyboard.on_release_key('w'):
+            rover.stop()
