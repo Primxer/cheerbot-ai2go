@@ -55,32 +55,33 @@ if __name__ == '__main__':
     rover = CheerbotRover(mock=True)
     rover.react('happy')
     rover.react('fear')
+    forward()
 
-def forward()
+def forward():
     GPIO.output(rightDir,GPIO.HIGH)
     GPIO.output(leftDir,GPIO.HIGH)
     GPIO.output(rightSpeed,GPIO.HIGH)
     GPIO.output(leftSpeed,GPIO.HIGH)
 
-def backward()
+def backward():
     GPIO.output(rightDir,GPIO.LOW)
     GPIO.output(leftDir,GPIO.LOW)
     GPIO.output(rightSpeed,GPIO.HIGH)
     GPIO.output(leftSpeed,GPIO.HIGH)
 
-def right()
+def right():
     GPIO.output(rightDir,GPIO.LOW)
     GPIO.output(leftDir,GPIO.HIGH)
     GPIO.output(rightSpeed,GPIO.HIGH)
     GPIO.output(leftSpeed,GPIO.HIGH)
 
-def left()
+def left():
     GPIO.output(rightDir,GPIO.HIGH)
     GPIO.output(leftDir,GPIO.LOW)
     GPIO.output(rightSpeed,GPIO.HIGH)
     GPIO.output(leftSpeed,GPIO.HIGH)
 
-def stop()
+def stop():
     GPIO.output(rightDir,GPIO.LOW)
     GPIO.output(leftDir,GPIO.LOW)
     GPIO.output(rightSpeed,GPIO.LOW)
