@@ -3,19 +3,19 @@ from time import sleep
 import RPi.GPIO as GPIO
 
 #######Pin Asssignments for the Motor Controller
-#RightMotorSpeed pin  5  //blue wire pi18
-#RightMotorDir   pin  0  //purple wire pi12
-#LeftMotorSpeed  pin  4  //gray wire pi13
-#LeftMotorDir    pin  2  //white wire pi19
+#RightMotorSpeed pin  5  //blue wire pi pin 18
+#RightMotorDir   pin  0  //purple wire pi pin 12
+#LeftMotorSpeed  pin  4  //gray wire pi pin 13
+#LeftMotorDir    pin  2  //white wire pi pin 19
 
 #######Pin Setup
 GPIO.setmode(GPIO.BCM)
 LOW = 0
 HIGH = 1
-rightDir = 0
-rightSpeed = 5
-leftDir = 2
-leftSpeed = 4
+rightDir = 12
+rightSpeed = 18
+leftDir = 19
+leftSpeed = 13
 
 GPIO.setup(rightDir, GPIO.OUT)
 GPIO.setup(rightSpeed, GPIO.OUT)
