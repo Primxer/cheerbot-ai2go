@@ -1,5 +1,12 @@
 from time import sleep
 
+#######Pin Asssignments for the Motor Controller
+#RightMotorSpeed pin  5  //blue wire pi18
+#RightMotorDir   pin  0  //purple wire pi12
+#LeftMotorSpeed  pin  4  //gray wire pi13
+#LeftMotorDir    pin  2  //white wire pi19
+
+
 # Skeleton for where the real rover code would be
 class RealRover:
     def react(self, emotion):
