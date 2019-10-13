@@ -1,5 +1,5 @@
 from time import sleep
-From RPI.GPIO import GPIO
+from RPi.GPIO import GPIO
 
 #######Pin Asssignments for the Motor Controller
 #RightMotorSpeed pin  5  //blue wire pi18
