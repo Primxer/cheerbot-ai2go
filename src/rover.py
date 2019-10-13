@@ -59,24 +59,27 @@ class RealRover:
     def react(self, emotion):
         if emotion is "happy":
             self.right()
-            sleep(1.0)
-            self.stop()
-            self.left()
             sleep(2.0)
             self.stop()
+            self.left()
+            sleep(4.0)
+            self.stop()
             self.right()
-            sleep(1.0)
+            sleep(2.0)
             self.stop()
         elif emotion is "sad":
             self.forward()
             sleep(0.25)
-            self.stop()
-            self.left()
-            sleep(0.25)
-            self.stop()
-            self.right()
-            sleep(0.5)
-            self.stop()
+            count = 0
+            while count < 4:
+                self.stop()
+                self.left()
+                sleep(0.25)
+                self.stop()
+                self.right()
+                sleep(0.5)
+                self.stop()
+                count += 1
         pass
 
     def wander(self):
@@ -111,5 +114,5 @@ atexit.register(__cleanup__)
 if __name__ == '__main__':
     rover = RealRover()
     rover.react("happy")
-    sleep(2)
+    sleep(5)
     rover.react("sad")
