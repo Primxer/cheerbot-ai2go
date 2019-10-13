@@ -9,7 +9,7 @@ from rover import CheerbotRover
 if __name__ == '__main__':
     face = CheerbotFace(mock=False)
     sound = CheerbotSound(mock=True)
-    rover = CheerbotRover(mock=True)
+    rover = CheerbotRover(mock=False)
 
     with EmotionClassifier() as emoteClassifier:
         while True:
@@ -20,7 +20,6 @@ if __name__ == '__main__':
                 face.show(emotion)
                 sound.play(emotion)
                 rover.react(emotion)
-
 
                 # Cooldown so it doesn't repeat
                 sleep(1)

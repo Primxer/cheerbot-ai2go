@@ -2,6 +2,7 @@
 from tempdir import tempdir
 from os import path
 import xnornet
+
 from pprint import pprint
 from subprocess import Popen, DEVNULL
 
@@ -44,6 +45,7 @@ class EmotionClassifier:
         pass
 
 if __name__ == '__main__':
+    rover = RoverBot()
     with EmotionClassifier() as face:
         while True:
             succ, emotionOrErrMsg = face.read()

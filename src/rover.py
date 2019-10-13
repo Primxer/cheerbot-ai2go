@@ -10,7 +10,7 @@ import atexit
 #LeftMotorDir    pin  2  //white wire pi pin 19
 
 #######Pin Setup
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 LOW = 0
 HIGH = 1
 rightDir = 12
@@ -57,6 +57,23 @@ class RealRover:
         GPIO.output(leftSpeed, GPIO.LOW)
 
     def react(self, emotion):
+        if emotion is "happy"
+            self.right()
+            sleep(1.5)
+            self.stop()
+            self.left(1.5)
+            sleep(1.5)
+            self.stop()
+        elif emotion is "sad"
+            self.forward()
+            sleep(.5)
+            self.stop()
+            self.left()
+            sleep(0.5)
+            self.stop()
+            self.right()
+            sleep(0.5)
+            self.stop()
         pass
 
     def wander(self):

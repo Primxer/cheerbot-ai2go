@@ -7,7 +7,6 @@ import Adafruit_GPIO.SPI as SPI
 class RealFace:
     def show(self, emotion):
         #Raspberry pi config
-
         DC = 17
         RST = 23
         SPI_PORT = 0
