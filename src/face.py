@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from PIL import Image
 import Adafruit_ILI9341 as TFT
 import Adafruit_GPIO as GPIO
