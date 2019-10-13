@@ -30,6 +30,7 @@ class RealRover:
         GPIO.output(leftDir, GPIO.LOW)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
+        sleep(5)
         self.stop()
 
     def backward(self):
@@ -37,6 +38,7 @@ class RealRover:
         GPIO.output(leftDir, GPIO.LOW)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
+        sleep(5)
         self.stop()
 
     def right(self):
@@ -44,6 +46,7 @@ class RealRover:
         GPIO.output(leftDir, GPIO.HIGH)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
+        sleep(5)
         self.stop()
 
     def left(self):
@@ -51,6 +54,7 @@ class RealRover:
         GPIO.output(leftDir, GPIO.LOW)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
+        sleep(5)
         self.stop()
 
     def stop(self):
