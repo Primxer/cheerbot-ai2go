@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from time import sleep
-from RPi.GPIO import GPIO
+import RPi.GPIO as GPIO
 
 #######Pin Asssignments for the Motor Controller
 #RightMotorSpeed pin  5  //blue wire pi18
