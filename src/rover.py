@@ -97,5 +97,5 @@ if __name__ == '__main__':
                 rover.forward()
             elif keyboard.on_release_key('w')
                 rover.stop()
-        else:
+        except:
             break
