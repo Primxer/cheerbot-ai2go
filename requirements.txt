@@ -1,3 +1,4 @@
+opencv-python
 Image
 Adafruit_ILI9341
 Adafruit_GPIO
