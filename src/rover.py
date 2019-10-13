@@ -17,8 +17,6 @@ rightSpeed = LOW
 leftDir = LOW
 leftSpeed = LOW
 
-GPIO.setup(False)
-
 GPIO.setup(rightDir, GPIO.OUT)
 GPIO.setup(rightSpeed, GPIO.OUT)
 GPIO.setup(leftDir, GPIO.OUT)
