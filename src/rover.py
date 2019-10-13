@@ -12,10 +12,10 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 LOW = 0
 HIGH = 0
-rightDir = LOW
-rightSpeed = LOW
-leftDir = LOW
-leftSpeed = LOW
+rightDir = 0
+rightSpeed = 5
+leftDir = 2
+leftSpeed = 4
 
 GPIO.setup(rightDir, GPIO.OUT)
 GPIO.setup(rightSpeed, GPIO.OUT)
