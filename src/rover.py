@@ -65,7 +65,7 @@ class RealRover:
             sleep(4.0)
             self.stop()
             self.right()
-            sleep(2.0)
+            sleep(1.6)
             self.stop()
         elif emotion is "sad":
             self.forward()
@@ -73,11 +73,13 @@ class RealRover:
             count = 0
             while count < 4:
                 self.stop()
+                sleep(0.75)
                 self.left()
                 sleep(0.25)
                 self.stop()
+                sleep(0.75)
                 self.right()
-                sleep(0.35)
+                sleep(0.30)
                 self.stop()
                 count += 1
         pass
