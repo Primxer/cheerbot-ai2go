@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import cv2
 from tempdir import tempdir
 from os import path
 import xnornet
 
 from pprint import pprint
+from subprocess import Popen, DEVNULL
 
 class EmotionClassifier:
     NO_READ = "Can't read webcam"
@@ -18,16 +18,14 @@ class EmotionClassifier:
 
     def __init__(self):
         self.model = xnornet.Model.load_built_in()
-        self.cap = cv2.VideoCapture(0)
 
     def read(self):
-        success, frame = self.cap.read()
-        if not success:
-            return False, EmotionClassifier.NO_READ
+        proc = Popen(["fswebcam", "--no-banner", EmotionClassifier.imgpath],
+                     stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL, close_fds=True)
+        proc.wait()
 
-        success = cv2.imwrite(EmotionClassifier.imgpath, frame)
-        if not success:
-            return False, EmotionClassifier.NO_SAVE
+        if proc.returncode != 0:
+            return False, EmotionClassifier.NO_READ
 
         capture_jpg = None
         with open(EmotionClassifier.imgpath, 'rb') as f:
@@ -44,7 +42,7 @@ class EmotionClassifier:
         return self
 
     def __exit__(self, type, value, traceback):
-        self.cap.release()
+        pass
 
 if __name__ == '__main__':
     rover = RoverBot()
@@ -55,7 +53,3 @@ if __name__ == '__main__':
                 print("Face detection: " + emotionOrErrMsg)
             else:
                 print("Error: " + emotionOrErrMsg)
-
-            # Exit on Q press
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
