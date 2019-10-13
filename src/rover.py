@@ -11,7 +11,7 @@ import RPi.GPIO as GPIO
 #######Pin Setup
 GPIO.setmode(GPIO.BCM)
 LOW = 0
-HIGH = 0
+HIGH = 1
 rightDir = 0
 rightSpeed = 5
 leftDir = 2
