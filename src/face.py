@@ -19,9 +19,9 @@ class RealFace:
         disp.begin()
 
         image = Image.open("assets/ON.bmp")
-        if emotion is "happy":
+        if emotion == "happy":
             image = Image.open("assets/OH.bmp")
-        elif emotion is "sad":
+        elif emotion == "sad":
             image = Image.open("assets/OS.bmp")
 
         #Resize the image and rotate to display

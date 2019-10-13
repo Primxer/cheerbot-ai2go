@@ -21,7 +21,7 @@ class EmotionClassifier:
 
     def read(self):
         proc = Popen(["fswebcam", "--no-banner", EmotionClassifier.imgpath],
-                     stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL, close_fds=True)
+                     stdin=DEVNULL, stdout=DEVNULL, stderr=None, close_fds=True)
         proc.wait()
 
         if proc.returncode != 0:

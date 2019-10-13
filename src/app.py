@@ -15,7 +15,7 @@ if __name__ == '__main__':
         while True:
             succ, emotion = emoteClassifier.read()
             if succ:
-                print("Found face")
+                print("Found face: " + emotion)
                 # Determine which face to display
                 face.show(emotion)
                 sound.play(emotion)

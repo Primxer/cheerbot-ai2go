@@ -57,7 +57,9 @@ class RealRover:
         GPIO.output(leftSpeed, GPIO.LOW)
 
     def react(self, emotion):
-        if emotion is "happy":
+        print("Rover emotion: " + emotion)
+        if emotion == "happy":
+            print("Rover is happy")
             self.right()
             sleep(2.0)
             self.stop()
@@ -67,7 +69,7 @@ class RealRover:
             self.right()
             sleep(2.5)
             self.stop()
-        elif emotion is "sad":
+        elif emotion == "sad":
             self.forward()
             sleep(0.25)
             count = 0
