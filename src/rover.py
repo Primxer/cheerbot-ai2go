@@ -93,4 +93,4 @@ def CheerbotRover(mock=True):
 if __name__ == '__main__':
     rover = RealRover()
     rover.forward()
-    GPIO.clear()
+    GPIO.cleanup()
