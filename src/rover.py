@@ -2,7 +2,6 @@
 from time import sleep
 import RPi.GPIO as GPIO
 import atexit
-import keyboard
 
 #######Pin Asssignments for the Motor Controller
 #RightMotorSpeed pin  5  //blue wire pi pin 18
