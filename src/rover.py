@@ -33,8 +33,8 @@ class RealRover:
         GPIO.output(leftSpeed, GPIO.HIGH)
 
     def backward(self):
-        GPIO.output(rightDir, GPIO.HIGH)
-        GPIO.output(leftDir, GPIO.HIGH)
+        GPIO.output(rightDir, GPIO.LOW)
+        GPIO.output(leftDir, GPIO.LOW)
         GPIO.output(rightSpeed, GPIO.LOW)
         GPIO.output(leftSpeed, GPIO.LOW)
 
