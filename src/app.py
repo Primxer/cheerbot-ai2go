@@ -1,25 +1,26 @@
 #!/usr/bin/env python3
 from emotion import EmotionDetector
-from face import CheerbotFace
 from time import sleep
+
+from face import CheerbotFace
+from sound import CheerbotSound
+from rover import CheerbotRover
 
 if __name__ == '__main__':
     face = CheerbotFace(mock=True)
+    sound = CheerbotSound(mock=True)
 
     with EmotionClassifier() as face:
         while True:
             succ, emotion = face.read()
             if succ:
                 # Determine which face to display
-                to_display = emotion
-                if emotion in ['happy', 'neutral']:
-                    to_display = 'positive'
-                elif emotion in ['disgust', 'fear', 'sad']:
-                    to_display = 'negative'
+                face.show(emotion)
+                sound.play(emotion)
+                rover.react(emotion)
 
-                face.show(to_display)
 
                 # Cooldown so it doesn't repeat
                 sleep(1)
             else:
-                print("Can't see a face just yet")
+                rover.wander()
