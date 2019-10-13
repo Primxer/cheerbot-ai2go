@@ -36,16 +36,16 @@ class RealRover:
     def backward(self):
         GPIO.output(rightDir, GPIO.LOW)
         GPIO.output(leftDir, GPIO.LOW)
-        GPIO.output(rightSpeed, GPIO.HIGH)
-        GPIO.output(leftSpeed, GPIO.HIGH)
+        GPIO.output(rightSpeed, GPIO.LOW)
+        GPIO.output(leftSpeed, GPIO.LOW)
 
-    def right(self):
+    def left(self):
         GPIO.output(rightDir, GPIO.LOW)
         GPIO.output(leftDir, GPIO.HIGH)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
 
-    def left(self):
+    def right(self):
         GPIO.output(rightDir, GPIO.HIGH)
         GPIO.output(leftDir, GPIO.LOW)
         GPIO.output(rightSpeed, GPIO.HIGH)
@@ -91,8 +91,6 @@ atexit.register(__cleanup__)
 
 if __name__ == '__main__':
     rover = RealRover()
-    while(True):
-        if keyboard.on_press_key('w', rover.forward()):
-            print()
-        elif keyboard.on_release_key('w', rover.stop()):
-            print()
+    rover.backward()
+    sleep(2)
+    rover.stop()
