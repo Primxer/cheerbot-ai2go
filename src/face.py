@@ -17,7 +17,11 @@ class RealFace:
         #Initialize display
         disp.begin()
 
-        image = Image.open("FILENAMEHERE")
+        image = Image.open("cheerbot-ai2go/assets/ON.bmp")
+        if emotion is "happy":
+            image = Image.open("cheerbot-ai2go/assets/OH.bmp")
+        elif emotion is "sad":
+            image = Image.open("cheerbot-ai2go/assets/OS.bmp")
 
         #Resize the image and rotate to display
         image = image.rotate(90).resize((240, 320))
