@@ -2,6 +2,7 @@
 from time import sleep
 import RPi.GPIO as GPIO
 import atexit
+import keyboard
 
 #######Pin Asssignments for the Motor Controller
 #RightMotorSpeed pin  5  //blue wire pi pin 18
@@ -31,32 +32,24 @@ class RealRover:
         GPIO.output(leftDir, GPIO.HIGH)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
-        sleep(2)
-        self.stop()
 
     def backward(self):
         GPIO.output(rightDir, GPIO.LOW)
         GPIO.output(leftDir, GPIO.LOW)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
-        sleep(2)
-        self.stop()
 
     def right(self):
         GPIO.output(rightDir, GPIO.LOW)
         GPIO.output(leftDir, GPIO.HIGH)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
-        sleep(2)
-        self.stop()
 
     def left(self):
         GPIO.output(rightDir, GPIO.HIGH)
         GPIO.output(leftDir, GPIO.LOW)
         GPIO.output(rightSpeed, GPIO.HIGH)
         GPIO.output(leftSpeed, GPIO.HIGH)
-        sleep(2)
-        self.stop()
 
     def stop(self):
         GPIO.output(rightDir, GPIO.LOW)
@@ -98,16 +91,11 @@ atexit.register(__cleanup__)
 
 if __name__ == '__main__':
     rover = RealRover()
-    inputString = " "
     while(True):
-        inputString = input()
-        if inputString == "w":
-            rover.forward()
-        elif inputString == "s":
-            rover.backward()
-        elif inputString == "a":
-            rover.left()
-        elif inputString == "d":
-            rover.right()
+        try:
+            if keyboard.on_press_key('w')
+                rover.forward()
+            elif keyboard.on_release_key('w')
+                rover.stop()
         else:
             break
