@@ -13,7 +13,7 @@ source venv/bin/activate
 
 # Install xnornet
 pushd "$1"
-python3 -m pip uninstall xnornet
+python3 -m pip uninstall xnornet || true
 python3 -m pip install xnornet*.whl
 popd
 
