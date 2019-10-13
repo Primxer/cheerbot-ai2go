@@ -7,8 +7,9 @@ from sound import CheerbotSound
 from rover import CheerbotRover
 
 if __name__ == '__main__':
-    face = CheerbotFace(mock=True)
+    face = CheerbotFace(mock=False)
     sound = CheerbotSound(mock=True)
+    rover = CheerbotRover(mock=True)
 
     with EmotionClassifier() as face:
         while True:
